@@ -1,5 +1,5 @@
 int player1 = 30;
-int player2 = 29;
+int player2 = 30;
 
 if (player1 > player2){
     println("Player1 won!");
