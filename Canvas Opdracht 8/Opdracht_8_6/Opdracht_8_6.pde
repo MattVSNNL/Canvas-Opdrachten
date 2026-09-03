@@ -5,7 +5,7 @@ void setup() {
   background(255, 255, 255);
   noFill();
   for (int i = 0; i < 5; i++) {
-    ellipse(125, 125, grootte, grootte);
+    ellipse(125 - grootte/2, 125, grootte, grootte);
     println(grootte);
     grootte += 20;
   }
