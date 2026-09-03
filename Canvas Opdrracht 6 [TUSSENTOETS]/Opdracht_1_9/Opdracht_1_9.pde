@@ -7,4 +7,4 @@ if (player1 > player2){
     println("Player2 won!");
 }else if (player1 == player2) {
     println("Tie!");
-}s
+}
