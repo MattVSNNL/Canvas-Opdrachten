@@ -7,5 +7,3 @@ if (quest1 && quest2 && quest3) {
 } else {
   println("One or more quests are not completed.");
 }
-
-// This test for Git
