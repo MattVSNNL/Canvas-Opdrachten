@@ -1,4 +1,4 @@
-int leeftijd = 25;
+int leeftijd = 4;
 
 switch(leeftijd) {
   case 1:
