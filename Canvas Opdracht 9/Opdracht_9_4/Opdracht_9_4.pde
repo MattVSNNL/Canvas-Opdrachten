@@ -1,4 +1,4 @@
-int[]data = 
+int[]data = null;
 
 void setup() {
   size(500, 500);
@@ -9,4 +9,6 @@ void setup() {
   line(275, 240, 273, 123);
 }
 
-void drawRectangle()
+void drawRectangle(){
+  
+}
