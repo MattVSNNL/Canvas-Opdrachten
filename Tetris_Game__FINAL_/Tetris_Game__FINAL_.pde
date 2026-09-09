@@ -1,5 +1,12 @@
 void setup() {
-  size(500, 500);
-  GenerateGrid(20,10,30);
+  size(300, 600);
+
+  PermenantBlocks[194] = true;
+  FallingBlocks[44] = true;
+  FallingBlocks[54] = true;
 }
 
+void draw(){
+  background(0);
+  GenerateGrid();
+}
