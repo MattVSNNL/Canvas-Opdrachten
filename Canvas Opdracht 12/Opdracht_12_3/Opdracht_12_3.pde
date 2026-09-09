@@ -4,7 +4,7 @@ void setup() {
   myAccount.Pay(1100.00, 1234, "Me"); // Not purchased
   myAccount.Pay(1100.00, 123, "Me"); // Fout
   myAccount.Pay(1100.00, 1234, "You"); // Fout
-  myAccount.AddSaldo(200.00, 1234, "Me");
+  myAccount.AddSaldo(200.00, 1234, "Me"); // Add saldo
   myAccount.Pay(1100.00, 1234, "Me"); // Purchased
 }
 
