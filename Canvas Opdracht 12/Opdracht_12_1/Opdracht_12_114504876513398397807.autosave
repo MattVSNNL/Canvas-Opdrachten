@@ -1,0 +1,26 @@
+
+
+void setup() {
+  size(500, 500);
+  Rectangle rect = new Rectangle(200, 200, 10, 10);
+
+  rect.Draw();
+}
+
+class Rectangle{
+    int x;
+    int y;
+    int w;
+    int h;
+
+    public Rectangle(int xPos, int yPos, int wPos, int hPos){
+        this.x = xPos;
+        this.y = yPos;
+        this.w = wPos;
+        this.h = hPos;
+    }
+
+    public void Draw(){
+        rect(x, y, w, h);
+    }
+}

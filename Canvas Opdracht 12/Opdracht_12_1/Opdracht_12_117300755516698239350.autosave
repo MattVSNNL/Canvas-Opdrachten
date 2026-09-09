@@ -1,0 +1,13 @@
+
+
+void setup() {
+  size(500, 500);
+  rect()
+}
+
+class Rectangle{
+    int x;
+    int y;
+    int h;
+    int w;
+}
