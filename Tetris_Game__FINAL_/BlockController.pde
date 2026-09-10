@@ -11,39 +11,37 @@ void GenerateGrid() {
         int index = r * collums + c;
         int x = c * cellSize;
         int y = r * cellSize;
+        color blockColor;
 
         if (PermenantBlocks[index]){
-          fill(255, 0, 0);
+          blockColor = color(255, 0, 0);
         }else if (FallingBlocks[index]){
-          fill(94, 4, 4);
+          blockColor = color(94, 4, 4);
         }else{
-          fill(255);
+          blockColor = color(255);
         }
 
-        stroke(200);
-        rect(x, y, cellSize, cellSize);
+        Block newBlock = new Block(x, y, blockColor);
+        newBlock.display();
     }
   }
 }
 
 class Block{
-  int row;
-  int collum;
+  PVector coords;
   color blockColor;
 
   Block(int r, int c, color bC){
-    this.row = r;
-    this.collum = c;
+    this.coords = new PVector(r, c);
     this.blockColor = bC;
   }
 
   void display(){
-    int x = this.collum * cellSize;
-    int y = this.row * cellSize;
+    int x = int(this.coords.x);
+    int y = int(this.coords.y);
 
     fill(blockColor);
     stroke(200);
-
     rect(x, y, cellSize, cellSize);
   }
 }
