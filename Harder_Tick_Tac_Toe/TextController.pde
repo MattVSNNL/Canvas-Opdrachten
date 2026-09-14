@@ -1,4 +1,4 @@
 void GenerateText(String text){
-    textSize(60);
+    textFont(moonGet);
     text(text, 475, 100);
 }
