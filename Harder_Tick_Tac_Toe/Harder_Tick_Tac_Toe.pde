@@ -1,15 +1,11 @@
 // Startup
 void setup() {
   // Setup
-  size(300, 600);
-
-  PermenantBlocks[194] = true;
-  FallingBlocks[44] = true;
-  FallingBlocks[54] = true;
+  size(600, 600);
 }
 
 // Draw
 void draw(){
-  background(0);
+  background(#75f542);
   GenerateGrid();
 }
