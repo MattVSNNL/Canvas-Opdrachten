@@ -1,5 +1,4 @@
 // Load images
-import processing.sound.*;
 PImage bg;
 PImage texture;
 PImage leaf;
@@ -10,10 +9,6 @@ PFont moonGet;
 ParticleSystem particlesLeft;
 ParticleSystem particlesRight;
 ParticleSystem particlesMiddle;
-
-// Sound
-SoundFile music;
-SoundFile birds;
 
 // Startup
 void setup() {
@@ -38,15 +33,10 @@ void setup() {
   particlesRight.populate(3);
 
   // Music
-  music = new SoundFile(this, "music/nature.mp3");
+  Sound music = new Sound(this, "music/nature.mp3", 1.00, true);
   music.play();
-  music.loop();
-  music.amp(1);
-
-  birds = new SoundFile(this, "music/birds.mp3");
+  Sound birds = new Sound(this, "music/birds.mp3", 0.75, true);
   birds.play();
-  birds.loop();
-  birds.amp(0.75);
 }
 
 // Draw
