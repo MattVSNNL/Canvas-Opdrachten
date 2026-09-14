@@ -33,9 +33,9 @@ void setup() {
   particlesRight.populate(3);
 
   // Music
-  Sound music = new Sound(this, "music/nature.mp3", 1.00, true);
+  SoundModule music = new SoundModule(this, "music/nature.mp3", 1.00, true);
   music.play();
-  Sound birds = new Sound(this, "music/birds.mp3", 0.75, true);
+  SoundModule birds = new SoundModule(this, "music/birds.mp3", 0.75, true);
   birds.play();
 }
 

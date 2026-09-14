@@ -1,12 +1,13 @@
 import processing.sound.*;
 import processing.core.PApplet;
 
-class Sound {
+class SoundModule {
   SoundFile sound;
 
-  Sound(PApplet app, String filePath, float volume, boolean isLooped) {
+  SoundModule(PApplet app, String filePath, float volume, boolean isLooped) {
     sound = new SoundFile(app, filePath);
     sound.amp(volume);
+
     if (isLooped) {
       sound.loop();
     }
