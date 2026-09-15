@@ -1,56 +1,29 @@
-// Load images
-PImage bg;
-PImage texture;
-PImage leaf;
-
-// Load fonts
-PFont moonGet;
-
-ParticleSystem particlesLeft;
-ParticleSystem particlesRight;
-ParticleSystem particlesMiddle;
+int time = 10;
+int lastTimerUpdate = 0;
 
 // Startup
 void setup() {
   // Setup
   size(600, 600);
+  loadEnviorment();
 
-  // Image
-  bg = loadImage("textures/backgroundTexture.png");
-  texture = loadImage("textures/woodTexture.png");
-  leaf = loadImage("textures/leaf.png");
-
-  // Fonts
-  moonGet = createFont("fonts/MoonGet.ttf", 60);
-
-  // Particles
-  particlesLeft = new ParticleSystem(new PVector(50, -30));
-  particlesMiddle = new ParticleSystem(new PVector(width / 2, -30));
-  particlesRight = new ParticleSystem(new PVector(width - 50, -30));
-
-  particlesLeft.populate(3);
-  particlesMiddle.populate(2);
-  particlesRight.populate(3);
-
-  // Music
-  SoundModule music = new SoundModule(this, "music/nature.wav", 1.00, true);
   music.play();
-  SoundModule birds = new SoundModule(this, "music/birds.wav", 0.75, true);
   birds.play();
 }
 
 // Draw
 void draw(){
   background(bg);
-
-  particlesLeft.addParticle();
-  particlesMiddle.addParticle();
-  particlesRight.addParticle();
-
-  particlesLeft.run();
-  particlesMiddle.run();
-  particlesRight.run();
+  loadParticles();
 
   GenerateGrid();
-  GenerateText("10");
+  if (millis() - lastTimerUpdate >= 1000){
+    if (time >= 0){
+      time = time - 1;
+      timer.update(str(time));
+    }
+    lastTimerUpdate = millis();
+  }
+  timer.display();
+  status.display();
 }
