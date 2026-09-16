@@ -6,10 +6,6 @@ HashMap<String, Integer> data = new HashMap<String, Integer>(); // Data Values
 // Variables
 boolean debounce = false;
 
-int num(int number){
-  return number = number - 1;
-}
-
 // Startup
 void setup() {
   // Setup
@@ -20,7 +16,7 @@ void setup() {
   data.put("Empty", 0);
   data.put("X", 1);
   data.put("Circle", 2);
-  
+
   Blocks[num(4)] = getShapie("Circle");
   Blocks[num(9)] = getShapie("X");
 
@@ -38,8 +34,4 @@ void draw() {
   status.display();
 
   debounce = false;
-}
-
-int getShapie(String shapie) {
-  return data.get(shapie);
 }
