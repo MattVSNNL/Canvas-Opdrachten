@@ -1,8 +1,3 @@
-// Imports
-import java.util.Map;
-
-HashMap<String, Integer> data = new HashMap<String, Integer>(); // Data Values
-
 // Variables
 boolean debounce = false;
 
@@ -12,13 +7,8 @@ void setup() {
   size(600, 600);
   loadEnviorment();
 
-  // Add all the data for what grid types mean
-  data.put("Empty", 0);
-  data.put("X", 1);
-  data.put("Circle", 2);
-
-  Blocks[num(4)] = getShapie("Circle");
-  Blocks[num(9)] = getShapie("X");
+  Blocks[num(2)] = getShapie("O");
+  Blocks[num(6)] = getShapie("X");
 
   music.play();
   birds.play();

@@ -40,7 +40,7 @@ class Block {
 
     if (shapie == getShapie("X")) {
       image(xImage, x, y, cellSize, cellSize);
-    } else if (shapie == getShapie("Circle")) {
+    } else if (shapie == getShapie("O")) {
       image(circleImage, x, y, cellSize, cellSize);
     }
   }

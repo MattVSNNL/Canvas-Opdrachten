@@ -1,3 +1,8 @@
+// Imports
+import java.util.Map;
+
+HashMap<String, Integer> data = new HashMap<String, Integer>(); // Data Values
+
 // Load images
 PImage bg;
 PImage texture;
@@ -48,6 +53,11 @@ void loadEnviorment(){
 
   timer = new Text("10", new PVector(475, 100), timerFont);
   status = new Text("Player 1's turn", new PVector(width / 2 - 125, 100), statusFont);
+
+  // Add all the data for what grid types mean
+  data.put("Empty", 0);
+  data.put("X", 1);
+  data.put("O", 2);
 }
 
 void loadParticles(){
