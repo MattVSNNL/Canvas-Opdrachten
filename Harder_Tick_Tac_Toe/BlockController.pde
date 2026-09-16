@@ -11,7 +11,7 @@ void GenerateGrid() {
   float textureHeight = (rows * cellSize);
   for (int c = 0; c < collums; c++) {
     for (int r = 0; r < rows; r++) {
-        int index = r * collums + c;
+        //int index = r * collums + c;
         int x = startX + c * cellSize;
         int y = startY + r * cellSize;
 
