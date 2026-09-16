@@ -56,8 +56,6 @@ void runGame() {
     println(player1Shapie);
     println(player2Shapie);
   }
-  println("Game Started!");
-  println(currentPlayersTurn);
 
   if (currentPlayersTurn == 1) {
     status.update("Player1's turn");
