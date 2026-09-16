@@ -66,6 +66,20 @@ void runGame() {
   if (clickedDebounce) {
 
     int winner = checkWinner();
+    boolean isFilled = true;
+
+    for (int i : Blocks){
+      if (i == 0){
+        isFilled = false;
+        break;
+      } 
+    }
+
+    if (isFilled){
+      status.update("Draw!");
+      endGame();
+      return;
+    }
 
     if (winner != 0) {
       if (winner == getShapie(player1Shapie)) {
@@ -73,10 +87,7 @@ void runGame() {
       } else {
         status.update("Player2 Wins!");
       }
-      gameStarted = false;
-      gameEndTime = millis();
-      waitingForReset = true;
-      clickedDebounce = false;
+      endGame();
       return;
     }
 
@@ -101,6 +112,13 @@ void resetGame() {
     playButton.show();
 
     waitingForReset = false;
+}
+
+void endGame(){
+  gameStarted = false;
+  gameEndTime = millis();
+  waitingForReset = true;
+  clickedDebounce = false;
 }
 
 int checkWinner() {
