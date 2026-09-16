@@ -20,13 +20,17 @@ ParticleSystem particlesLeft;
 ParticleSystem particlesRight;
 ParticleSystem particlesMiddle;
 
-Text timer;
 Text status;
 
 SoundModule music;
 SoundModule birds;
 
+ButtonController playButton;
+
 void loadEnviorment(){
+  rectMode(CENTER);
+  textAlign(CENTER, CENTER);
+
   // Image
   bg = loadImage("textures/backgroundTexture.png");
   leaf = loadImage("textures/leaf.png");
@@ -35,7 +39,6 @@ void loadEnviorment(){
   cell = loadImage("textures/woodCell.png");
 
   // Fonts
-  timerFont = createFont("fonts/MoonGet.ttf", 60);
   statusFont = createFont("fonts/MoonGet.ttf", 30);
 
   // Particles
@@ -48,16 +51,21 @@ void loadEnviorment(){
   particlesRight.populate(3);
   
   // Music
-  music = new SoundModule(this, "music/nature.wav", 1.00, true);
-  birds = new SoundModule(this, "music/birds.wav", 0.75, true);
+  music = new SoundModule(this, "music/nature.wav", 1.00, true); // Looping sounds makes it play automatically for some reason
+  birds = new SoundModule(this, "music/birds.wav", 0.75, true); // Looping sounds makes it play automatically for some reason
 
-  timer = new Text("10", new PVector(475, 100), timerFont);
-  status = new Text("Player 1's turn", new PVector(width / 2 - 125, 100), statusFont);
+  status = new Text("Press Play", new PVector(width / 2, 100), statusFont);
+
+  playButton = new ButtonController("Play!", new PVector(width / 2, 525), new PVector(200, 100), color(255), color(0));
 
   // Add all the data for what grid types mean
   data.put("Empty", 0);
   data.put("X", 1);
   data.put("O", 2);
+}
+
+void mousePressed(){
+  playButton.mousePressed();
 }
 
 void loadParticles(){
