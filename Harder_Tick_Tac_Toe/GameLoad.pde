@@ -1,9 +1,11 @@
 // Load images
 PImage bg;
 PImage texture;
+PImage cell;
 PImage leaf;
 PImage xImage;
 PImage circleImage;
+PImage backgroundTexture;
 
 // Load fonts
 PFont timerFont;
@@ -22,10 +24,10 @@ SoundModule birds;
 void loadEnviorment(){
   // Image
   bg = loadImage("textures/backgroundTexture.png");
-  texture = loadImage("textures/woodTexture.png");
   leaf = loadImage("textures/leaf.png");
   xImage = loadImage("textures/x.png");
   circleImage = loadImage("textures/circle.png");
+  cell = loadImage("textures/woodCell.png");
 
   // Fonts
   timerFont = createFont("fonts/MoonGet.ttf", 60);
