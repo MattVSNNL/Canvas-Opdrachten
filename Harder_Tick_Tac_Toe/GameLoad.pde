@@ -2,6 +2,8 @@
 PImage bg;
 PImage texture;
 PImage leaf;
+PImage xImage;
+PImage circleImage;
 
 // Load fonts
 PFont timerFont;
@@ -22,6 +24,8 @@ void loadEnviorment(){
   bg = loadImage("textures/backgroundTexture.png");
   texture = loadImage("textures/woodTexture.png");
   leaf = loadImage("textures/leaf.png");
+  xImage = loadImage("textures/x.png");
+  circleImage = loadImage("textures/circle.png");
 
   // Fonts
   timerFont = createFont("fonts/MoonGet.ttf", 60);
@@ -40,7 +44,7 @@ void loadEnviorment(){
   music = new SoundModule(this, "music/nature.wav", 1.00, true);
   birds = new SoundModule(this, "music/birds.wav", 0.75, true);
 
-  timer = new Text("", new PVector(475, 100), timerFont);
+  timer = new Text("10", new PVector(475, 100), timerFont);
   status = new Text("Player 1's turn", new PVector(width / 2 - 125, 100), statusFont);
 }
 

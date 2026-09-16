@@ -1,5 +1,10 @@
-int time = 10;
-int lastTimerUpdate = 0;
+// Imports
+import java.util.Map;
+
+HashMap<String, Integer> data = new HashMap<String, Integer>(); // Data Values
+
+// Variables
+boolean debounce = false;
 
 // Startup
 void setup() {
@@ -7,23 +12,30 @@ void setup() {
   size(600, 600);
   loadEnviorment();
 
+  // Add all the data for what grid types mean
+  data.put("Empty", 0);
+  data.put("X", 1);
+  data.put("Circle", 2);
+  
+  Blocks[2] = getShapie("Circle");
+  Blocks[5] = getShapie("X");
+
   music.play();
   birds.play();
 }
 
 // Draw
-void draw(){
+void draw() {
   background(bg);
   loadParticles();
-
   GenerateGrid();
-  if (millis() - lastTimerUpdate >= 1000){
-    if (time >= 0){
-      time = time - 1;
-      timer.update(str(time));
-    }
-    lastTimerUpdate = millis();
-  }
+
   timer.display();
   status.display();
+
+  debounce = false;
+}
+
+int getShapie(String shapie) {
+  return data.get(shapie);
 }
