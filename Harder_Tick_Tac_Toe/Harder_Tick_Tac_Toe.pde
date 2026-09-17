@@ -34,7 +34,7 @@ void draw() {
     runGame();
   }
 
-  if (waitingForReset && millis() - gameEndTime >= resetDelay){
+  if (waitingForReset && millis() - gameEndTime >= resetDelay) {
     resetGame();
   }
 }
@@ -68,25 +68,27 @@ void runGame() {
     int winner = checkWinner();
     boolean isFilled = true;
 
-    for (int i : Blocks){
-      if (i == 0){
-        isFilled = false;
-        break;
-      } 
-    }
-
-    if (isFilled){
-      status.update("Draw!");
-      endGame();
-      return;
-    }
-
     if (winner != 0) {
       if (winner == getShapie(player1Shapie)) {
         status.update("Player1 Wins!");
       } else {
         status.update("Player2 Wins!");
       }
+      winnerSfx.play();
+      endGame();
+      return;
+    }
+
+    for (int i : Blocks) {
+      if (i == 0) {
+        isFilled = false;
+        break;
+      }
+    }
+
+    if (isFilled) {
+      status.update("Draw!");
+      drawSfx.play();
       endGame();
       return;
     }
@@ -102,19 +104,19 @@ void runGame() {
 }
 
 void resetGame() {
-    ResetBlocks();
-    player1Shapie = "";
-    player2Shapie = "";
+  ResetBlocks();
+  player1Shapie = "";
+  player2Shapie = "";
 
-    currentPlayersTurn = 1;
+  currentPlayersTurn = 1;
 
-    status.update("Press Play");
-    playButton.show();
+  status.update("Press Play");
+  playButton.show();
 
-    waitingForReset = false;
+  waitingForReset = false;
 }
 
-void endGame(){
+void endGame() {
   gameStarted = false;
   gameEndTime = millis();
   waitingForReset = true;

@@ -24,6 +24,9 @@ Text status;
 
 SoundModule music;
 SoundModule birds;
+SoundModule clickSfx;
+SoundModule winnerSfx;
+SoundModule drawSfx;
 
 ButtonController playButton;
 
@@ -53,6 +56,9 @@ void loadEnviorment(){
   // Music
   music = new SoundModule(this, "music/nature.wav", 1.00, true); // Looping sounds makes it play automatically for some reason
   birds = new SoundModule(this, "music/birds.wav", 0.75, true); // Looping sounds makes it play automatically for some reason
+  clickSfx = new SoundModule(this, "music/click.wav", 1, false);
+  winnerSfx = new SoundModule(this, "music/winner.wav", 1, false);
+  drawSfx = new SoundModule(this, "music/sad.wav", 1, false);
 
   status = new Text("Press Play", new PVector(width / 2, 100), statusFont);
 

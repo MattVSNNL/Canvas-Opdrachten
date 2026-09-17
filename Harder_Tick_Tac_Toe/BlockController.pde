@@ -69,6 +69,7 @@ class Block {
       if (Blocks[index] != 0){
         return;
       }
+      clickSfx.play();
       if (currentPlayersTurn == 1){
         Blocks[index] = getShapie(player1Shapie);
       }else{
